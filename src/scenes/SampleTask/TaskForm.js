@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button, Input, Row, Col } from 'antd';
+const { TextArea } = Input;
 
 export default class TaskForm extends Component {
 
@@ -25,25 +27,31 @@ export default class TaskForm extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          type='text'
-          name='title'
-          placeholder='Write Task'
-          onChange={this.onChange}
-          value={this.state.title} />
-        <br />
-        <br />
-        <textarea
-          name='detail'
-          placeholder='Write Detail Task'
-          onChange={this.onChange}
-          value={this.state.detail} >
-        </textarea>
-        <br />
-        <br />
-        <button onSubmit={this.onSubmit}>
-          Save Task
-        </button>
+        <Row style={{ padding: '8px 8px' }}>
+          <Col span={5} order={1}>
+            <Input
+              type='text'
+              name='title'
+              placeholder='Write Task'
+              onChange={this.onChange}
+              value={this.state.title}
+            />
+            <br />
+            <br />
+            <TextArea
+              rows={4}
+              onChange={this.onChange}
+              name='detail'
+              placeholder='Write Detail Task'
+              value={this.state.detail}
+              showCount maxLength={200}
+            />
+            <br />
+            <br />
+            <Button onSubmit={this.onSubmit} type="primary">Save Task</Button>
+          </Col>
+        </Row>
+
       </form>
     )
   }

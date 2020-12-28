@@ -44,9 +44,9 @@ class App extends Component {
   render() {
     return <div>
       <Router>
-        <Link to="/">Home</Link>
-        <br />
+        <Link to="/" style={{ padding: '15px' }}>Home</Link>
         <Link to="/users">Users</Link>
+        <br />
         <Route exact path="/" render={() => {
           return <div>
             <TaskForm addTask={this.addTask} />
