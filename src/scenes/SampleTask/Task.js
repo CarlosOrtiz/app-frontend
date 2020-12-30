@@ -43,12 +43,12 @@ Task.propsTypes = {
   task: PropsTypes.object.isRequired
 }
 
-const btbDelete = {
+/* const btbDelete = {
   background: '#ea2027',
   color: '#fff',
   border: 'none',
   fontWeight: 'bold',
   cursor: 'pointer'
-}
+} */
 
 export default Task;
