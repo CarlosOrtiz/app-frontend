@@ -39,24 +39,23 @@ export default class User extends Component {
     return (
       <div align="center">
         <h1><b>Nuestros Usuarios</b></h1>
-        <div className="Container">
-          {
-            this.state.posts.map(item => {
-              fullName = `${item.person.name} ${item.person.lastname}`;
-              phone = `Núm Cel: ${item.person.phone}`
-              return <Col key={item.person.id} span={8} className="Element" order={item.person.id}  >
-                <Card
-                  hoverable
-                  style={{ width: 150 }}
-                  onClick={info}
-                  cover={<img alt="example" src={item.person.photo} />} >
-                  <Meta title={fullName.toUpperCase()} description={phone} />
-                  <Rate allowHalf defaultValue={2.5} />
-                </Card>
-              </Col>
-            })
-          }
-        </div>
+        <Row className="grid"> {
+          this.state.posts.map(item => {
+            fullName = `${item.person.name} ${item.person.lastname}`;
+            phone = `Núm Cel: ${item.person.phone}`
+            return <Col key={item.person.id} span={8} className="" order={item.person.id}  >
+              <Card
+                hoverable
+                style={{ width: 150 }}
+                onClick={info}
+                cover={<img alt="example" src={item.person.photo} />} >
+                <Meta title={fullName.toUpperCase()} description={phone} />
+                <Rate allowHalf defaultValue={2.5} />
+              </Card>
+            </Col>
+          })
+        }
+        </Row>
       </div>
     )
   }
