@@ -6,7 +6,7 @@ let phone = '';
 
 async function info() {
   Modal.info({
-    title: 'INFORMACIÓN DE LA PERSONA',
+    title: 'TODAS NUESTRAS TAREAS',
     content: (
       <div style={{ textAlign: 'center' }}>
         <p style={{ textAlign: 'left' }}>some messages...some messages...</p>
@@ -43,7 +43,7 @@ export default class User extends Component {
           this.state.posts.map(item => {
             fullName = `${item.person.name} ${item.person.lastname}`;
             phone = `Núm Cel: ${item.person.phone}`
-            return <Col key={item.person.id} span={8} className="" order={item.person.id}  >
+            return <Col key={item.person.id} span={8} className="b" order={item.person.id}  >
               <Card
                 hoverable
                 style={{ width: 150 }}
